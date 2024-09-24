@@ -1,39 +1,58 @@
-import { Button, Link, Stack, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  Link,
+  Stack,
+  TextField,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { useNavigate } from "react-router";
 
 const Login: React.FC = () => {
-  const navidate = useNavigate();
+  const navigate = useNavigate();
+  const { palette } = useTheme();
+
   return (
     <Stack
       direction="row"
       justifyContent="center"
       alignItems="center"
       height="100%"
+      width="100%"
     >
       <Stack
         sx={{
-          maxWidth: "40rem",
           padding: "2.5rem 4rem",
-          border: 1,
-          borderRadius: 6,
+          border: 2,
+          borderRadius: 4,
           borderColor: "primary.light",
-          boxShadow: 4,
+          boxShadow: `0px 0px 20px ${palette.primary.light}`,
+          minWidth: "16rem",
         }}
         direction="column"
+        alignItems={"center"}
         spacing={4}
       >
         <Typography variant="h3" color="text.secondary">
           Bienvenido
         </Typography>
-        <Stack spacing={2}>
-          <TextField label="Usuario" />
-          <TextField label="Contraseña" />
+        <Stack spacing={2} width="100%">
+          <FormControl sx={{ minWidth: "15rem" }}>
+            <Typography variant="body2">Usuario *</Typography>
+            <TextField label="Usuario" size="small" />
+          </FormControl>
+          <FormControl sx={{ minWidth: "15rem" }}>
+            <Typography variant="body2">contraseña *</Typography>
+            <TextField label="Contraseña" size="small" />
+          </FormControl>
         </Stack>
-        <Stack spacing={1}>
+        <Stack direction="column" alignItems="center" spacing={1}>
           <Button
             variant="contained"
             color="primary"
-            onClick={() => navidate("/home")}
+            sx={{ textTransform: "none" }}
+            onClick={() => navigate("/home")}
           >
             Login
           </Button>
