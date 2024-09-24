@@ -53,7 +53,13 @@ const Reports: React.FC = () => {
   ];
 
   return (
-    <Stack direction="row" spacing={4}>
+    <Stack
+      direction="row"
+      spacing={4}
+      justifyContent={"center"}
+      alignItems={"center"}
+      sx={{ padding: "2rem" }}
+    >
       <Stack direction="column" sx={{ flex: 1 }}>
         <BackButton />
         <Box>
@@ -70,7 +76,9 @@ const Reports: React.FC = () => {
             sx={{
               border: 0,
               "& .MuiDataGrid-columnHeaders": {
-                backgroundColor: "background.paper",
+                "& .MuiDataGrid-row--borderBottom": {
+                  backgroundColor: "background.paper",
+                },
                 "& .MuiDataGrid-columnHeaderTitle": {
                   fontWeight: "bold",
                 },
@@ -91,7 +99,11 @@ const Reports: React.FC = () => {
             <Legend
               verticalAlign="top"
               height={36}
-              wrapperStyle={{ color: "#00000" }}
+              wrapperStyle={{
+                color: "black !important",
+                fontWeight: "bold",
+                fontSize: "14px", 
+              }}
             />
             <Bar
               dataKey="events"
