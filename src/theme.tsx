@@ -28,6 +28,7 @@ const theme = createTheme({
       light: "rgba(213, 198, 255, 0.3)",
       main: "#7A1CAC",
       contrastText: "#fff",
+      dark: "#454A5F" // Color para iconos
     },
     text: {
       primary: "#1E202C",
