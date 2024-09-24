@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridColDef} from "@mui/x-data-grid";
 import { Box, Stack, Typography } from "@mui/material";
 import { BackButton } from "../../components/back-button";
 import { useState } from "react";
@@ -22,18 +22,23 @@ const Reports: React.FC = () => {
       field: "id",
       headerName: "N°",
       flex: 1,
+      headerAlign: "center",
+      align: "center",
     },
     {
       field: "userName",
       headerName: "Nombre de usuario",
       flex: 3,
       minWidth: 200,
+      headerAlign: "center",
     },
     {
       field: "totalEvents",
       headerName: "Nº eventos",
       minWidth: 150,
       flex: 2,
+      headerAlign: "center",
+      align: "center",
     },
   ];
 
@@ -62,7 +67,7 @@ const Reports: React.FC = () => {
     >
       <Stack direction="column" sx={{ flex: 1 }}>
         <BackButton />
-        <Box>
+        <Box sx={{ width: "100%", maxWidth: "40rem" }}>
           <Typography variant="h3" color="text.primary">
             Reportes
           </Typography>
@@ -73,6 +78,11 @@ const Reports: React.FC = () => {
             initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
             pageSizeOptions={[5, 10]}
             autoHeight
+            localeText={{
+              MuiTablePagination: {
+                labelRowsPerPage: "Filas por página",
+              }
+            }}
             sx={{
               border: 0,
               "& .MuiDataGrid-columnHeaders": {
@@ -102,7 +112,7 @@ const Reports: React.FC = () => {
               wrapperStyle={{
                 color: "black !important",
                 fontWeight: "bold",
-                fontSize: "14px", 
+                fontSize: "14px",
               }}
             />
             <Bar
