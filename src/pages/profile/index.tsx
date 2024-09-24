@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -8,8 +8,19 @@ import {
   useTheme,
 } from "@mui/material";
 import { BackButton } from "../../components/back-button";
+import { CustomModal } from "../../components/custom-modal";
 
 const Profile: React.FC = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   const theme = useTheme();
   return (
     <Box sx={{ padding: "2rem", width: "100%", height: "100%" }}>
@@ -29,6 +40,7 @@ const Profile: React.FC = () => {
           variant="contained"
           color="primary"
           sx={{ textTransform: "none" }}
+          onClick={handleOpenModal}
         >
           Editar Perfil
         </Button>
@@ -41,7 +53,7 @@ const Profile: React.FC = () => {
           <Box
             sx={{
               padding: "2rem",
-              borderBottom: `2px solid ${theme.palette.primary.main}`, // Usar el color del theme
+              borderBottom: `2px solid ${theme.palette.primary.main}`,
               height: 200,
             }}
           >
@@ -126,6 +138,14 @@ const Profile: React.FC = () => {
           />
         </Stack>
       </Stack>
+
+      {/* Modal */}
+      <CustomModal
+        isOpen={openModal}
+        onClose={handleCloseModal}
+        title="Esta funcionalidad no esta implementada"
+        contentText="Volver"
+      />
     </Box>
   );
 };
