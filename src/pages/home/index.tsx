@@ -19,22 +19,23 @@ const Home: React.FC = () => {
       sx={{ padding: "2rem" }}
     >
       {/* Botón de cerrar sesión */}
-      <Link
-        href="/logout"
-        variant="body1"
-        position={"absolute"}
-        top="4rem"
-        right="4rem"
+      <Button
+        variant="body2"
         sx={{
+          position: "absolute",
+          textTransform: "none",
+          top: "4rem",
+          right: "4rem",
           color: "primary.main",
-          textDecoration: "none", 
+          textDecoration: "none",
           "&:hover": {
             textDecoration: "none",
           },
         }}
+        onClick={() => navigate("/")}
       >
         Cerrar sesión
-      </Link>
+      </Button>
 
       {/* Título y subtítulo */}
       <Typography
