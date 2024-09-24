@@ -5,6 +5,7 @@ import { Home } from "./pages/home";
 import { Events } from "./pages/events";
 import { Users } from "./pages/users";
 import { Reports } from "./pages/reports";
+import { Profile } from "./pages/profile";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile",
-    element: <div>Profile</div>,
+    element: <Profile />,
   },
 ]);
 
