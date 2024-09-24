@@ -19,6 +19,12 @@ type Event = {
   description: string;
 };
 
+type Report = {
+  id: number;
+  userName: string;
+  totalEvents: number;
+};
+
 const USERS: Array<User> = [
   {
     id: 1,
@@ -185,5 +191,17 @@ const EVENTS: Array<Event> = [
   },
 ];
 
-export { USERS, EVENTS };
-export type { User, Event };
+const REPORTS: Array<Report> = [
+  { id: 1, userName: "Carolina Ramirez", totalEvents: 150 },
+  { id: 2, userName: "Juan Camilo", totalEvents: 120 },
+  { id: 3, userName: "Laura Gutz", totalEvents: 100 },
+  { id: 4, userName: "Pedro Infante", totalEvents: 85 },
+  { id: 5, userName: "Carolina Corcho", totalEvents: 84 },
+  { id: 6, userName: "Laura Gutz", totalEvents: 100 },
+  { id: 7, userName: "Pedro Infante", totalEvents: 85 },
+  { id: 8, userName: "Carolina Corcho", totalEvents: 84 },
+  { id: 9, userName: "Laura Gutz", totalEvents: 100 },
+];
+
+export { USERS, EVENTS, REPORTS };
+export type { User, Event, Report };
