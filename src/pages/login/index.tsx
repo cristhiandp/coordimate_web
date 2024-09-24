@@ -39,11 +39,15 @@ const Login: React.FC = () => {
         </Typography>
         <Stack spacing={2} width="100%">
           <FormControl sx={{ minWidth: "15rem" }}>
-            <Typography variant="body2">Usuario *</Typography>
+            <Typography variant="body2" sx={{ marginBlockEnd: "0.5rem" }}>
+              Usuario *
+            </Typography>
             <TextField label="Usuario" size="small" />
           </FormControl>
           <FormControl sx={{ minWidth: "15rem" }}>
-            <Typography variant="body2">contraseña *</Typography>
+            <Typography variant="body2" sx={{ marginBlockEnd: "0.5rem" }}>
+              Contraseña *
+            </Typography>
             <TextField label="Contraseña" size="small" />
           </FormControl>
         </Stack>
