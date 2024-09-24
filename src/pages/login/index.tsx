@@ -28,7 +28,6 @@ const Login: React.FC = () => {
           borderRadius: 4,
           borderColor: "primary.light",
           boxShadow: `0px 0px 20px ${palette.primary.light}`,
-          minWidth: "16rem",
         }}
         direction="column"
         alignItems={"center"}
