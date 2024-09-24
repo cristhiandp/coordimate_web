@@ -1,6 +1,6 @@
 import {
   Button,
-  capitalize,
+  FormControl,
   Link,
   Stack,
   TextField,
@@ -10,8 +10,9 @@ import {
 import { useNavigate } from "react-router";
 
 const Login: React.FC = () => {
-  const navidate = useNavigate();
+  const navigate = useNavigate();
   const { palette } = useTheme();
+
   return (
     <Stack
       direction="row"
@@ -23,28 +24,35 @@ const Login: React.FC = () => {
       <Stack
         sx={{
           padding: "2.5rem 4rem",
-          border: 1,
-          borderRadius: 6,
+          border: 2,
+          borderRadius: 4,
           borderColor: "primary.light",
           boxShadow: `0px 0px 20px ${palette.primary.light}`,
           minWidth: "16rem",
         }}
         direction="column"
+        alignItems={"center"}
         spacing={4}
       >
         <Typography variant="h3" color="text.secondary">
           Bienvenido
         </Typography>
         <Stack spacing={2} width="100%">
-          <TextField label="Usuario" size="medium" />
-          <TextField label="Contraseña" />
+          <FormControl sx={{ minWidth: "15rem" }}>
+            <Typography variant="body2">Usuario *</Typography>
+            <TextField label="Usuario" size="small" />
+          </FormControl>
+          <FormControl sx={{ minWidth: "15rem" }}>
+            <Typography variant="body2">contraseña *</Typography>
+            <TextField label="Contraseña" size="small" />
+          </FormControl>
         </Stack>
         <Stack direction="column" alignItems="center" spacing={1}>
           <Button
             variant="contained"
             color="primary"
             sx={{ textTransform: "none" }}
-            onClick={() => navidate("/home")}
+            onClick={() => navigate("/home")}
           >
             Login
           </Button>

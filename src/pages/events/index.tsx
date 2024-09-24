@@ -61,7 +61,17 @@ const Events: React.FC = () => {
           columns={columns}
           initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
           pageSizeOptions={[5, 10]}
-          sx={{ border: 0 }}
+          sx={{
+            border: 0,
+            "& .MuiDataGrid-columnHeaders": {
+              "& .MuiDataGrid-row--borderBottom": {
+                backgroundColor: "background.paper",
+              },
+              "& .MuiDataGrid-columnHeaderTitle": {
+                fontWeight: "bold",
+              },
+            },
+          }}
         />
       </Box>
     </Stack>

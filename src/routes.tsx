@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import "./index.css";
 import { Login } from "./pages/login";
 import { Events } from "./pages/events";
+import { Users } from "./pages/users";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/users",
-    element: <div>Users</div>,
+    element: <Users />,
   },
   {
     path: "/profile",
